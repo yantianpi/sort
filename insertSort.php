@@ -9,7 +9,7 @@ include_once("./Common.php");
 $arr = [2,4,100,78,89,50,40,29,100];
 $length = count($arr);
 var_dump('sort before', $arr);
-sort($arr, $length);
+insertSort($arr, $length);
 var_dump('sort after', $arr);
 
 /**
@@ -21,6 +21,7 @@ var_dump('sort after', $arr);
  * @param $length
  */
 function insertSort(&$arr, $length) {
+    echo 'insert sort';
     for ($i = 1; $i < $length; $i++) {
         $j = $i - 1; // 已经有序的末尾元素索引
         $tmp = $arr[$i]; // 待插入元素值

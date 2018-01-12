@@ -9,7 +9,7 @@ include_once("./Common.php");
 $arr = [2,4,100,78,89,50,40,29,100];
 $length = count($arr);
 var_dump('sort before', $arr);
-sort($arr, $length);
+shellSort($arr, $length);
 var_dump('sort after', $arr);
 
 /**
@@ -21,7 +21,8 @@ var_dump('sort after', $arr);
  * @param $length
  */
 function shellSort(&$arr, $length) {
-    $increment = $length/2;
+    echo 'shell sort';
+    $increment = floor($length/2);// 注意 php中的除法，总是返回浮点数，除非两个操作数为整数且正好能整除
     while ($increment > 0) {
         for ($i = $increment; $i < $length; $i++) {
             $tmp = $arr[$i];
@@ -36,6 +37,6 @@ function shellSort(&$arr, $length) {
             }
             $arr[$j + $increment] = $tmp;
         }
-        $increment = $increment/2;
+        $increment = floor($increment/2);
     }
 }
