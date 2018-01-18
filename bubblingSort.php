@@ -25,9 +25,7 @@ function bubblingSort(&$arr, $length) {
     for ($i = 0; $i < $length - 1; $i++) { // n-1次
         for ($j = 0; $j < $length - $i - 1; $j++) { // 对无序区进行冒泡
             if (Common::compare($arr[$j], $arr[$j + 1]) > 0) {
-                $tmp = $arr[$j];
-                $arr[$j] = $arr[$j + 1];
-                $arr[$j + 1] = $tmp;
+                Common::swap($arr[$j], $arr[$j + 1]);
             }
         }
     }

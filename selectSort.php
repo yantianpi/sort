@@ -28,9 +28,7 @@ function selectSort(&$arr, $length) {
             }
         }
         if ($k != $i) {
-            $tmp = $arr[$k];
-            $arr[$k] = $arr[$i];
-            $arr[$i] = $tmp;
+            Common::swap($arr[$k], $arr[$i]);
         }
     }
 }

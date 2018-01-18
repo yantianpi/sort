@@ -24,4 +24,16 @@
              return 0;
          }
      }
+
+     /**
+      * 交换元素的值
+      *
+      * @param $one
+      * @param $two
+      */
+     public static function swap(&$one, &$two) {
+         $tmp = $one;
+         $one = $two;
+         $two = $tmp;
+     }
  }
