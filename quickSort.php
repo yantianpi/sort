@@ -12,11 +12,29 @@ var_dump('sort before', $arr);
 quickSort($arr, $length);
 var_dump('sort after', $arr);
 
+/**
+ *
+ * 快速排序，在需要排序的的数列中选取一个枢纽元，然后根据枢纽元将数列分为左右两部分，左边部分元素都小于枢纽元，右边部分元素都大于枢纽元，然后再分别对左右两部分分别递归调用，进行排序
+ *
+ */
 
+/**
+ * 入口
+ *
+ * @param $arr
+ * @param $length
+ */
 function quickSort(&$arr, $length) {
     qSort($arr, 0, $length - 1);
 }
 
+/**
+ * 快排核心
+ *
+ * @param $arr
+ * @param $startIndex
+ * @param $endIndex
+ */
 function qSort(&$arr, $startIndex, $endIndex) {
     if ($startIndex < $endIndex) {
         if (false && $endIndex - $startIndex + 1 <= 3) {
@@ -63,6 +81,7 @@ function qSort(&$arr, $startIndex, $endIndex) {
 }
 
 /**
+ *选取枢纽元，三数中值
  *
  * @param $arr
  * @param $start
@@ -84,6 +103,13 @@ function median3(&$arr, $start, $end) {
     return $arr[$end -1];
 }
 
+/**
+ * 指定索引区间选择排序
+ *
+ * @param $arr
+ * @param $startIndex
+ * @param $endIndex
+ */
 function selectSort(&$arr, $startIndex, $endIndex) {
     if ($startIndex < $endIndex) {
         for ($i = $startIndex; $i < $endIndex; $i++) {
